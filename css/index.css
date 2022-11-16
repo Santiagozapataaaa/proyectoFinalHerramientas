@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    margin: 10px 0px;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.secciones{
+    padding: 20px;
+}
+
+.logotipo{
+    margin: auto;
+}
+
+.logotipo img{
+    width: 80px;
+}
+
+.perfil{
+    float: right;
+    padding: 20px;
+}
+
+.perfil img{
+    width: 25px;
+}
+
+main{
+    height: 950px;
+    background-image: url(../data/background.jpg);
+    background-size: contain;
+    background-color: black;
+}
