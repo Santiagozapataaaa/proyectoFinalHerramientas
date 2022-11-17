@@ -1,11 +1,11 @@
 <?php
     require_once('./model/inicioModel.php');
 
-    class modeloController{
+    class inicioController{
         private $model;
         function __construct()
         {
-            $this->model = new Modelo();
+            $this->model = new inicioModelo();
         }
 
         // mostrar
@@ -13,7 +13,6 @@
         {
             // $producto = new Modelo();
             // $datos = $producto->mostrar('productos','1');
-
             include './view/inicio.php';
         }
     }

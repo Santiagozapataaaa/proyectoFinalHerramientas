@@ -1,5 +1,5 @@
 <?php
-    class Modelo {
+    class inicioModelo {
         private $modelo;
         private $conn;
 
@@ -25,7 +25,7 @@
 
         public function mostrar()
         {
-            
+
         }
 
         public function actualizar()
