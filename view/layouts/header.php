@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/05e74ce1fa.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./view/img/fenrir.ico" type="image/x-icon">
     <link rel="stylesheet" href="./view/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <title>Fenrir</title>
 </head>
 
@@ -44,10 +44,10 @@
             <div class="col-lg-4 login">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fa-regular fa-cart-shopping"></i></a>
+                        <a class="nav-link" href=""><i class="bi bi-cart"></i> : <span>0</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="iniciar_sesion"><i class="fa-regular fa-right-to-bracket"></i></a>
+                        <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
                     </li>
                 </ul>
             </div>

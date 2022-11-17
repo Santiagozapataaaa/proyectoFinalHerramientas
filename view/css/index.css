@@ -27,7 +27,7 @@ body{
     justify-content: right;
 }
 .login i{
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .contenido{
@@ -52,4 +52,8 @@ body{
 
 .item-content img:hover{
     transform: scale(1.2);
+}
+
+.contacto{
+    margin-top: 60px !important;
 }

@@ -12,7 +12,7 @@
 
         public function insertar($tabla, $datos)
         {
-            $sql = 'insert into'.$tabla.' values('.$datos.')';
+            $sql = 'insert into '.$tabla.' values('.$datos.')';
             $consulta = mysqli_prepare($this->conn, $sql);
 
             mysqli_stmt_execute($consulta);
@@ -27,9 +27,9 @@
             }
         }
 
-        public function mostrar()
+        public function mostrar($tabla, $datos)
         {
-
+            $sql = 'select * from ? where ? = ?';
         }
 
         public function actualizar()
