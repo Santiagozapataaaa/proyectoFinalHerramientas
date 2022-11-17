@@ -1,3 +1,3 @@
-<?php
-    include './view/inicio.php'
+<?php 
+include './view/inicio.php'
 ?>

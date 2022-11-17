@@ -1,42 +1,29 @@
 body{
-    margin: 0;
-    box-sizing: border-box;
+    background-color: black !important;
+    margin: 0px;
+    padding: 0px;
 }
 
-nav{
-    margin: 10px 0px;
+.logo{
     display: flex;
+    justify-content: center;
+    background-color: #fff;
 }
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-.secciones{
-    padding: 20px;
-}
-
-.logotipo{
-    margin: auto;
-}
-
-.logotipo img{
+.logo img{
     width: 80px;
 }
 
-.perfil{
-    float: right;
-    padding: 20px;
+.menu{
+    background-color: #fff !important;
+    margin: 0px !important;
+    padding: 0px 0px 10px 0px!important;
 }
 
-.perfil img{
-    width: 25px;
+.nav , .search, .login{
+    margin: 0px !important;
+    padding: 0px !important;
 }
-
-main{
-    height: 950px;
-    background-image: url(../data/background.jpg);
-    background-size: contain;
-    background-color: black;
+.login{
+    display: flex;
+    justify-content: right;
 }
