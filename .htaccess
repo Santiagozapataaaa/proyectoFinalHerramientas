@@ -1,4 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !\.(jpg|css|js|gif|png)$ [NC]
-RewriteRule ^(.*) index.php?pantalla=$1 [QSA]

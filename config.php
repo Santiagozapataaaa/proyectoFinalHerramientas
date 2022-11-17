@@ -1,3 +1,5 @@
 <?php
-    $lista_controladores['inicio'] = 'navbar';
-    $lista_controladores['iniciar_sesion'] = 'login';
+define('urlsite','http://localhost/proyectos/proyectoFinalHerramientas');
+    // $lista_controladores['inicio'] = 'inicio';
+    // $lista_controladores['iniciar_sesion'] = 'login';
+    // $lista_controladores['contacto'] = 'contacto';
