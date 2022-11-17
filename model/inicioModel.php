@@ -12,13 +12,17 @@
 
         public function insertar($tabla, $datos)
         {
-            $consulta = 'insert into'.$tabla.' values('.$datos.')';
-            $resultado = $this->conn->query($consulta);
+            $sql = 'insert into'.$tabla.' values('.$datos.')';
+            $consulta = mysqli_prepare($this->conn, $sql);
 
-            if ($resultado)
+            mysqli_stmt_execute($consulta);
+
+            if (mysqli_stmt_fetch($consulta))
             {
+                $consulta->close();
                 return true;
             }else{
+                $consulta->close();
                 return false;
             }
         }
