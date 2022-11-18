@@ -10,30 +10,23 @@
             $this->conn = $db;
         }
 
-        public function insertar($tabla, $datos)
+        public function mostrar($tabla)
         {
-            $sql = 'insert into '.$tabla.' values('.$datos.')';
+            $sql = 'select * from '.$tabla;
             $consulta = mysqli_prepare($this->conn, $sql);
 
             mysqli_stmt_execute($consulta);
 
+            $resultado = mysqli_stmt_bind_result($consulta, $descripcion, $valor, $ruta);
+
             if (mysqli_stmt_fetch($consulta))
             {
                 $consulta->close();
-                return true;
+                return $resultado;
             }else{
                 $consulta->close();
-                return false;
+                return $resultado;
             }
         }
 
-        public function mostrar($tabla, $datos)
-        {
-            $sql = 'select * from ? where ? = ?';
-        }
-
-        public function actualizar()
-        {
-
-        }
     }

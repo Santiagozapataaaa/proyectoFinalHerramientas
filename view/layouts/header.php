@@ -33,13 +33,32 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contacto">Contacto</a>
                     </li>
-                    
                     <div class="">
                         <li class="nav-item">
                             <i class="bi bi-search" id="search"></i>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href=""><i class="bi bi-cart"></i> : <span>0</span></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-cart"></i> : <span>0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="product">
+                                    <img src="./view/img/background.jpg" alt="" class="img-shop">
+                                    <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p class="valor">1 X $20.000</p>
+                                </li>
+                                <li class="separador"></li>
+                                <li class="product">
+                                    <img src="./view/img/background.jpg" alt="" class="img-shop">
+                                    <p class="texto"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p class="valor">1 X $20.000</p>
+                                </li>
+                                <li class="separador"></li>
+                                <li class="botones">
+                                    <button class="btn btn-outline-success cart-shop">Ir al Carrito</button>
+                                    <button class="btn btn-outline-success">Realizar Pago</button>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
@@ -47,7 +66,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="col search">
+            <div class="col hidde" id="frmsearch">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>

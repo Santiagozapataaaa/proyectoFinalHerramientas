@@ -11,8 +11,9 @@
         // mostrar
         static function index()
         {
-            // $producto = new Modelo();
+            // $producto = new inicioModelo();
             // $datos = $producto->mostrar('productos','1');
+
             include './view/inicio.php';
         }
     }
