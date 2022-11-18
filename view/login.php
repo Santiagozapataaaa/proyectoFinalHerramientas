@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./view/css/login.css">
+    <link rel="shortcut icon" href="./view/img/fenrir.ico" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
@@ -14,9 +15,12 @@
             <form action="#">
                 <h1>Crear cuenta</h1>
                 <input type="text" placeholder="Nombre" />
-                <input type="number" placeholder="cedula" />
+                <input type="text" placeholder="Apellido" />
                 <input type="email" placeholder="Email" />
+                <input type="text" placeholder="Tipo de documento" />
+                <input type="number" placeholder="Numero de documento" />
                 <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password validation" />
                 <button class="buttonIngresar">Registrarme</button>
             </form>
         </div>

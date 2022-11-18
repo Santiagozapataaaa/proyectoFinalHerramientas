@@ -202,6 +202,7 @@ input {
     background-color: white;
     color: #000;
 }
+
 .buttonIngresar:hover{
     transition: backgroun-color, color, border, .5s;
     background-color: white;
