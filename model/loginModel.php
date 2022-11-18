@@ -12,6 +12,6 @@
         
         public function consultar()
         {
-            
+            $sql = 'SELECT * FROM' `usuarios`
         }
     }

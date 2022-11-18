@@ -12,7 +12,7 @@
     <h2>INICIO DE SESIÓN</h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="productoController.php" method="POST">
                 <h1>Crear cuenta</h1>
                 <input type="text" placeholder="Nombre" />
                 <input type="text" placeholder="Apellido" />
