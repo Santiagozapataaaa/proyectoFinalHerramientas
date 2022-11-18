@@ -25,7 +25,7 @@ include('./view/layouts/header.php');
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <button class="btn btn-success">Enviar</button>
+                <button class="btn btn-outline-success">Enviar</button>
             </form>
         </div>
     </div>
