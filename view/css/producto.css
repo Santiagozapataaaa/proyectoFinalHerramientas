@@ -1,0 +1,6 @@
+.nuevo_producto{
+    display: flex !important;
+    border:3px solid black;
+    margin: auto;
+    max-width: 500px;
+}
