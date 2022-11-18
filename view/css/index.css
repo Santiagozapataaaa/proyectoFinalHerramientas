@@ -3,33 +3,60 @@ body{
     padding: 0px;
 }
 
+/* -----------Barra Navegacion---------- */
+nav div{
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff !important;
+    margin: 0px !important;
+    padding: 0px 0px 10px 0px!important;
+}
+nav a{
+    color: #097bab !important;
+}
+nav a:hover {
+    color: #0fa3e3 !important;
+}
+
 .logo{
     display: flex;
     justify-content: center;
-    background-color: #D2D2D2;
+    background-color: #ffffff;
 }
 .logo img{
     width: 80px;
 }
 
-.menu{
-    background-color: #D2D2D2 !important;
-    margin: 0px !important;
-    padding: 0px 0px 10px 0px!important;
+.nav{
+    position: relative;
+    left: 5%;
 }
 
-.nav , .search, .login{
+.menu div{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 70%;
+}
+
+.nav , .search{
     margin: 0px !important;
     padding: 0px !important;
 }
-.login{
-    display: flex;
-    justify-content: right;
+
+#search{
+    color: #097bab;
+    cursor: pointer;
 }
-.login i{
-    font-size: 27px;
+#search:hover{
+    color: #0fa3e3;
 }
 
+.menu i{
+    font-size: 18px;
+}
+
+/* ---------------Contenido-------------- */
 .contenido{
     display: flex;
     justify-content: space-between;
