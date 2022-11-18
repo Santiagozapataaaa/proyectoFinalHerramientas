@@ -1,4 +1,5 @@
-// Buscar
+
+//-------- Buscar
 let btnSearch = document.getElementById('search')
 let frmSearch = document.getElementById('frmsearch')
 
@@ -15,3 +16,4 @@ btnSearch.addEventListener('click',()=>{
     }
     
 })
+//--------------------------------------------------
