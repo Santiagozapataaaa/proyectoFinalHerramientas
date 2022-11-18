@@ -17,8 +17,8 @@
         <div class="col logo">
             <a class="nav-link" href="inicio"><img src="./view/img/Logotipo_fenrir_black.png" alt=""></a>
         </div>
-        <div class="row menu">
-            <div class="col-lg-4">
+        <div class="row">
+            <div class="menu">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="inicio">Inicio</a>
@@ -27,30 +27,36 @@
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="producto">Link</a>
+                        <a class="nav-link" href="producto">Producto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contacto">Contacto</a>
                     </li>
+                    
+                    <div class="">
+                        <li class="nav-item">
+                            <i class="bi bi-search" id="search"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class="bi bi-cart"></i> : <span>0</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
+                        </li>
+                    </div>
                 </ul>
             </div>
-            <div class="col-lg-4 search">
+            <div class="col search">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
-
             </div>
-            <div class="col-lg-4 login">
+            <!-- <div class="col-lg-4 login">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="bi bi-cart"></i> : <span>0</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
-                    </li>
+                    
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- Contenido -->
