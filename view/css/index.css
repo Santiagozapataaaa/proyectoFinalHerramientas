@@ -94,6 +94,7 @@ nav a:hover {
     margin-top: -10px;
     padding-left: 20px;
     padding-bottom: 5px;
+    font-size: 13px;
 }
 .botones{
     display: flex;
