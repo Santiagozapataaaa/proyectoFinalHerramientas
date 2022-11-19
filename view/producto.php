@@ -8,7 +8,7 @@ include('./view/layouts/header.php');
 </div>
 
 <div id="maxi-container">
-    <form action="producto/enviar" method="post" enctype="multipart/form-data" target="_blank" id="form_producto">
+    <form action="producto/enviar" method="post" enctype="multipart/form-data" id="form_producto">
         <div id="product-content">
             <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example" id="producto" name="producto">
         </div>
@@ -35,7 +35,6 @@ include('./view/layouts/header.php');
             <div id="divFileUpload">
                 <input class="form-control" name="file-upload" id="file-upload" type="file" accept="image/*">
             </div>
-
         </div>
         <div id="btn-content">
             <button type="submit" class="btn btn-primary" id="btn-producto" name="btn-producto">CREAR PRODUCTO</button>
