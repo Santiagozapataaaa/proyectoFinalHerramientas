@@ -43,6 +43,8 @@
     
                 if (!empty($resultado)) {
                     return $resultado;
+                }else{
+                    return false;
                 }
             } catch (PDOException $e) {
                 $this->conn->rollback();

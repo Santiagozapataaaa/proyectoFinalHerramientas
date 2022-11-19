@@ -7,7 +7,12 @@ class productoController
     {
         $producto = new productoModelo;
         $datos = $producto->store('tblproductos');
-        include './view/producto.php';
+
+        if ($datos == false) {
+            include './view/producto.php';
+        } else {
+            require_once('./view/producto.php');
+        }
     }
 
     static function enviar()
