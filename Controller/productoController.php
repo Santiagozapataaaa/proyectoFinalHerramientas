@@ -21,7 +21,6 @@ class productoController
         if(isset($_POST['btn-producto']))
         {
             $producto = $_POST['producto'];
-            
             $cantidad = $_POST['cantidad'];
             $descripcion = $_POST['descripcion'];
             $precio = $_POST['precio'];

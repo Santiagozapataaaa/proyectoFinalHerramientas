@@ -8,7 +8,7 @@ include('./view/layouts/header.php');
 </div>
 
 <div id="maxi-container">
-    <form action="producto/enviar" method="post" enctype="multipart/form-data" target="_blank" id="form_producto">
+    <form action="producto/enviar" method="post" enctype="multipart/form-data" id="form_producto">
         <div id="product-content">
             <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example" id="producto" name="producto">
         </div>
