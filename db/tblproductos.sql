@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tblproductos` (
   `id` int(5) NOT NULL,
-  `strProducto` int(50) NOT NULL,
+  `strProducto` varchar(50) NOT NULL,
   `strTipo` varchar(50) NOT NULL,
   `strDescripcion` varchar(500) NOT NULL,
   `intPrecio` int(10) NOT NULL,

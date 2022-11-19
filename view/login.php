@@ -17,16 +17,12 @@
                 <input type="text" placeholder="Nombre"  name="nombre"/>
                 <input type="text" placeholder="Apellido" name="apellido"/>
                 <input type="email" placeholder="Email" name="email"/>
-                <div class="select">
-                <select name="format" id="format">
-                    <option selected disabled>Choose a book format</option>
-                    <option value="pdf">PDF</option>
-                    <option value="txt">txt</option>
-                    <option value="epub">ePub</option>
-                    <option value="fb2">fb2</option>
-                    <option value="mobi">mobi</option>
+                <select id="format" name="tipoDoc">
+                    <option selected>Selecione Tipo de Documento</option>
+                    <option value="C.C">Cedula Ciudadania</option>
+                    <option value="T.I">Tarjeta de Identidad</option>
+                    <option value="C.E">Cedula de Extrangeria</option>
                 </select>
-                </div>
                 <input type="number" placeholder="Numero de documento" name="doc"/>
                 <input type="password" placeholder="Password" name="passwd"/>
                 <input type="password" placeholder="Password validation" />

@@ -35,7 +35,6 @@ include('./view/layouts/header.php');
             <div id="divFileUpload">
                 <input class="form-control" name="file-upload" id="file-upload" type="file" accept="image/*">
             </div>
-
         </div>
         <div id="btn-content">
             <button type="submit" class="btn btn-primary" id="btn-producto" name="btn-producto">CREAR PRODUCTO</button>
