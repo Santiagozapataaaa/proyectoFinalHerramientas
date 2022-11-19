@@ -3,8 +3,8 @@
 include('./view/layouts/header.php');
 ?>
 
-<div id ="title-container">
-    <h2  id="titulo-p"><i>PRODUCTOS</i></h2>
+<div id="title-container">
+    <h2 id="titulo-p"><i>PRODUCTOS</i></h2>
 </div>
 
 <div id="maxi-container">
@@ -71,41 +71,40 @@ include('./view/layouts/header.php');
 </div>
 
 <div id="tabla-productos">
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Producto</th>
-                        <th>Tipo</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($datos = mysqli_fetch_array($resultado)) { // almaceno en un array la consulta y la condiciono en un while para que me muestre la informacion mientras hayan datos en el array
-                    ?>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Tipo</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Eliminar</th>
+                <th>Actualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($datos as $key => $value) { // almaceno en un array la consulta y la condiciono en un while para que me muestre la informacion mientras hayan datos en el array
+            ?>
+                <tr>
+                    <th><?php echo $value['id'] ?></th>
+                    <th><?php echo $value['strProducto'] ?></th> <!-- inserto php y le digo a datos que me muestre lo de la colmna correspondiente mostrara datos a medida que vaya leyendo la informacion -->
+                    <th><?php echo $value['strTipo'] ?></th>
+                    <th><?php echo $value['strDescripcion'] ?></th>
+                    <th><?php echo $value['intPrecio'] ?></th>
+                    <th><?php echo $value['intCantidad'] ?></th>
+                    <th><button type="submit" class="btn btn-primary" id="btn-producto" name="eliminar-producto">Eliminar</button></th>
+                    <th><button type="submit" class="btn btn-primary" id="btn-producto" name="actualizar-producto">Actualizar</button></th>
+                </tr>
 
-                        <tr>
-                            <th><?php echo $datos['id'] ?></th>
-                            <th><?php echo $datos['strProducto'] ?></th> <!-- inserto php y le digo a datos que me muestre lo de la colmna correspondiente mostrara datos a medida que vaya leyendo la informacion -->
-                            <th><?php echo $datos['strTipo'] ?></th>
-                            <th><?php echo $datos['strDescripcion'] ?></th>
-                            <th><?php echo $datos['intPrecio'] ?></th>
-                            <th><?php echo $datos['intCantidad'] ?></th>
-                        </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
 
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-
-        </div>
+</div>
 
 
-<?php
-//Footer
-include('./view/layouts/footer.php');
-?>

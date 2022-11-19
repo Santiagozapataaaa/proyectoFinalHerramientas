@@ -32,21 +32,24 @@
         }
 
         public function store($tabla){
-            $sql = 'select * from '.$tabla;
-            $consulta = $this->conn->prepare($consulta);
-
-            mysqli_stmt_execute($consulta);
-
-            $resultado = mysqli_stmt_bind_result($consulta, $descripcion, $valor, $ruta);
-
-            if (mysqli_stmt_fetch($consulta))
-            {
-                $consulta->close();
-                return $resultado;
-            }else{
-                $consulta->close();
-                return $resultado;
+            $this->conn->beginTransaction();
+            try {
+                $sql = "SELECT * from " . $tabla . " where 1";
+                $consulta = $this->conn->prepare($sql);
+                $consulta->execute();
+                $this->conn->commit();
+    
+                $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    
+                if (!empty($resultado)) {
+                    return $resultado;
+                }
+            } catch (PDOException $e) {
+                $this->conn->rollback();
+                echo "No se pudo realizar la consulta" . $e->getMessage();
+                exit();
             }
+            exit();
         }
 
     }

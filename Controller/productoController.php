@@ -5,7 +5,6 @@ class productoController
 
     static function index()
     {
-
         $producto = new productoModelo;
         $datos = $producto->store('tblproductos');
         include './view/producto.php';
@@ -78,6 +77,12 @@ class productoController
             header('location: ../producto');
             echo "no se pudo insertó el producto";
             die();
+        }
+    }
+
+    static function eliminar(){
+        if(isset($_POST['eliminar-producto'])){
+            
         }
     }
 }

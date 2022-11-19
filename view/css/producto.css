@@ -7,7 +7,6 @@
     flex-wrap: wrap;
     padding: 40px;
 }
-
 #product-content{
     width: 35%;
     margin: 20px 0 0 30px;
@@ -78,4 +77,5 @@
 #tabla-productos{
     max-width: 1200px;
     margin: auto;
+    margin-top: 50px
 }
