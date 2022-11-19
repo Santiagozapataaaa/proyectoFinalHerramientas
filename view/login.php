@@ -17,7 +17,16 @@
                 <input type="text" placeholder="Nombre"  name="nombre"/>
                 <input type="text" placeholder="Apellido" name="apellido"/>
                 <input type="email" placeholder="Email" name="email"/>
-                <input type="text" placeholder="Tipo de documento" name="tipoDoc"/>
+                <div class="select">
+                <select name="format" id="format">
+                    <option selected disabled>Choose a book format</option>
+                    <option value="pdf">PDF</option>
+                    <option value="txt">txt</option>
+                    <option value="epub">ePub</option>
+                    <option value="fb2">fb2</option>
+                    <option value="mobi">mobi</option>
+                </select>
+                </div>
                 <input type="number" placeholder="Numero de documento" name="doc"/>
                 <input type="password" placeholder="Password" name="passwd"/>
                 <input type="password" placeholder="Password validation" />

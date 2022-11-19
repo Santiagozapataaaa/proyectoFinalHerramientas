@@ -1,48 +1,80 @@
-.form_producto{
+#form_producto{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: auto;
     margin-top: 30px;
-    max-width: 700px;
-    border: 3px solid black;
+    max-width: 1240px;
     text-align: center;
+    flex-wrap: wrap;
+    padding: 40px;
 }
-.form_producto .form-control{
-    max-width: 500px;
-    margin: auto;
+
+#product-content{
+    width: 35%;
+    margin: 20px 0 0 30px;
+}
+#tipo{
+    width: 35%;
+    margin: 20px 20px 0 20px;
+    height: 40px;
+}
+#cantidad-content{
+    width: 20%;
     margin-top: 20px;
 }
-.form_producto .form-select{
-    max-width: 500px;
-    margin: auto;
-    margin-top: 20px;
+#decripcion-container{
+    margin:20px 20px 0 30px;
+    width: 35%;
+    height: 100%;
 }
-.descripcion{
-    width: 500px;
-    margin: auto;
-    margin-top: 20px;
-    min-width: 300px;
+#precio-content{
+    margin:20px 10px 0 0;
+    width: 25%;
 }
-.archivo{
+#divInputLoad{
     margin-top: 20px;
+    width: 31%;
 }
-.descripcion .form-control{
-    margin-top: -5px;
+#btn-content{
+    width: 30%;
+    float: right;
+    margin-left: 850px;
+    margin-top: -30px;
+}
+#maxi-container{
+    margin-top: 30px;
+    margin-right: 160px;
+    display: grid;
+    grid-template-columns: 1240px 300px;
+    max-width: 1600px;
+    float: right;
+    margin-bottom: 46px;
+    padding:20px ;
+    -webkit-box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
+    border-radius: 8px;
 }
 #file-preview-zone{
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    margin: auto;
-    margin-top: 20px;
+    display: inline-block;
+    width: 220px;
+    height: 300px;
+    outline: 3px solid rgb(174, 174, 174);
+    border-radius: 5%;
 }
 #file-preview-zone img{
-    float: left;
-    width: 250px;
-    height: 300px;
-    margin-left: 100px;
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
 }
-.btn-container .btn{
-    margin-top: -100px;
-    margin-left: 300px;
+#loguito{
+    width: 70px;
+    display: absolute;
+}
+#title-container{
+    width: 100vw;
+    text-align: center;
+}
+#titulo-p{
+    display: inline-block;
 }

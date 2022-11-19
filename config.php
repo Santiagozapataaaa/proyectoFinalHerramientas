@@ -5,3 +5,4 @@
     $lista_controladores['producto'] = 'productoController';
     $lista_controladores['contacto'] = 'contactoController';
     $lista_controladores['registro'] = 'registroController';
+    $lista_controladores['uploadfile'] = 'upload-file';
