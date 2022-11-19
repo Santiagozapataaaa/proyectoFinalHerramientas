@@ -70,7 +70,7 @@ include('./view/layouts/header.php');
 
 </div>
 
-<div class="tabla-productos">
+<div id="tabla-productos">
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
@@ -79,7 +79,7 @@ include('./view/layouts/header.php');
                         <th>Tipo</th>
                         <th>Descripcion</th>
                         <th>Precio</th>
-                        <th>Cantidd</th>
+                        <th>Cantidad</th>
                     </tr>
                 </thead>
                 <tbody>

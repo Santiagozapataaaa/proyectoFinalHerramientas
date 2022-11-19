@@ -30,4 +30,23 @@
             }
             exit();
         }
+
+        public function store($tabla){
+            $sql = 'select * from '.$tabla;
+            $consulta = $this->conn->prepare($consulta);
+
+            mysqli_stmt_execute($consulta);
+
+            $resultado = mysqli_stmt_bind_result($consulta, $descripcion, $valor, $ruta);
+
+            if (mysqli_stmt_fetch($consulta))
+            {
+                $consulta->close();
+                return $resultado;
+            }else{
+                $consulta->close();
+                return $resultado;
+            }
+        }
+
     }
