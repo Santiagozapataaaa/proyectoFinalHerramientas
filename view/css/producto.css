@@ -71,6 +71,10 @@
     width: 70px;
     display: absolute;
 }
-.titulo-p{
-    grid-column: 0/2;
+#title-container{
+    width: 100vw;
+    text-align: center;
+}
+#titulo-p{
+    display: inline-block;
 }

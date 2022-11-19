@@ -1,5 +1,5 @@
 <?php
-    class inicioModelo {
+    class productoModelo {
         private $modelo;
         private $conn;
 
@@ -7,24 +7,27 @@
         {
             $this->Modelo = array();
             include './controller/conexionController.php';
-            $this->conn = $db;
+            $this->conn = new Conexion();
         }
-
-        public function insertar($tabla, $datos)
+        
+        public function registrar($tabla,$datos)
         {
-            $sql = 'insert into '.$tabla.' values('.$datos.')';
-            $consulta = mysqli_prepare($this->conn, $sql);
+            $clave = htmlentities($datos[1]);
 
-            mysqli_stmt_execute($consulta);
+            $this->conn -> beginTransaction();
+            try{
+                $sql = "INSERT INTO ".$tabla." (strProducto,strTipo,strDescripcion,intPrecio,intCantidad,strRuta) value('{$datos[0]}','{$datos[1]}','{$datos[2]}','{$datos[3]}','{$datos[4]}','{$datos[5]}')";
+                $consulta = $this->conn->prepare($sql);
 
-            if (mysqli_stmt_fetch($consulta))
-            {
-                $consulta->close();
-                return true;
-            }else{
-                $consulta->close();
-                return false;
+                if($consulta->execute()){
+                    $this->conn->commit();
+                    return true;
+                }
+            }catch(PDOException $e ){
+                $this->conn -> rollback();
+                echo "No se pudo realizar la consulta".$e->getMessage();
+                exit();
             }
+            exit();
         }
-
     }
