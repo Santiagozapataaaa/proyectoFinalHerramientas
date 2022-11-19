@@ -1,3 +1,7 @@
+<?php
+include "./controller/loginController.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +16,9 @@
     <h2>INICIO DE SESIÓN</h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="../Controller/registroController.php" method="POST">
                 <h1>Crear cuenta</h1>
-                <input type="text" placeholder="Nombre" />
+                <input type="text" placeholder="Nombre"  />
                 <input type="text" placeholder="Apellido" />
                 <input type="email" placeholder="Email" />
                 <input type="text" placeholder="Tipo de documento" />
@@ -25,12 +29,12 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="<?php loginController::login(); ?>" method="POST">
                 <h1>Inicia Sesión</h1>
-                <input type="email" placeholder="Usuario" />
-                <input type="password" placeholder="Contraseña" />
+                <input type="email" placeholder="Usuario" name="usuario"/>
+                <input type="password" placeholder="Contraseña" name="password"/>
                 <a href="#" class="forgot">Olvidaste tu contraseña?</a>
-                <button class="buttonIngresar">Ingresar</button>
+                <button class="buttonIngresar" name="enviar">Ingresar</button>
             </form>
         </div>
         <div class="overlay-container">
