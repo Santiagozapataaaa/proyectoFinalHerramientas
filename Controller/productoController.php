@@ -21,7 +21,6 @@ class productoController
         if(isset($_POST['btn-producto']))
         {
             $producto = $_POST['producto'];
-            
             $cantidad = $_POST['cantidad'];
             $descripcion = $_POST['descripcion'];
             $precio = $_POST['precio'];
@@ -37,7 +36,7 @@ class productoController
             $url_temp = $_FILES["file-upload"]["tmp_name"]; //Ruta temporal a donde se carga el archivo 
         
             //dirname(__FILE__) nos otorga la ruta absoluta hasta el archivo en ejecución
-            $url_insert = dirname(__FILE__) . "../view/img/productos"; //Carpeta donde subiremos nuestros archivos
+            $url_insert = dirname('./view/img') . "/productos"; //Carpeta donde subiremos nuestros archivos
         
             //Ruta donde se guardara el archivo, usamos str_replace para reemplazar los "\" por "/"
             $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
