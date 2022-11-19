@@ -25,11 +25,15 @@
                         <a class="nav-link active" href="inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Catalogo</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="producto">Producto</a>
-                    </li>
+                    <?php
+                    session_start();
+                    if ($_SESSION["userRol"] == 'Admin') { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="producto">Producto</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item">
                         <a class="nav-link" href="contacto">Contacto</a>
                     </li>
@@ -60,9 +64,29 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
-                        </li>
+                        <?php if (isset($_SESSION['userRol'])) { ?>
+                            <li class="nav-item menu-usuario">
+                                <a class="nav-link dropdown-toogle" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="product">
+                                        <a href="nav-link">Perfil</a>
+                                    </li>
+                                    <li class="product">
+                                        <a href="nav-link">opciones</a>
+                                    </li>
+                                    <li class="separador"></li>
+                                    <li class="nav-item botones">
+                                        <button class="btn btn-outline-success"><a href="inicio/salir">Cerrar Sesion</a></button>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="iniciar_sesion"><i class="bi bi-box-arrow-in-right"></i></a>
+                            </li>
+                        <?php } ?>
                     </div>
                 </ul>
             </div>
@@ -72,11 +96,6 @@
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
             </div>
-            <!-- <div class="col-lg-4 login">
-                <ul class="nav">
-                    
-                </ul>
-            </div> -->
         </div>
     </nav>
     <!-- Contenido -->

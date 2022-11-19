@@ -2,14 +2,6 @@
 require_once("./model/productoModel.php");
 class productoController
 {
-    // private $model;
-    // private $view;
-
-
-    // public function __construct()
-    // {
-    //     $this->model = new loginModelo();
-    // }
 
     static function index()
     {
