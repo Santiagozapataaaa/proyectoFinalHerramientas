@@ -26,6 +26,9 @@ class inicioModelo
             if (!empty($resultado)) {
                 return $resultado;
             }
+            else{
+                return false;
+            }
         } catch (PDOException $e) {
             $this->conn->rollback();
             echo "No se pudo realizar la consulta" . $e->getMessage();
