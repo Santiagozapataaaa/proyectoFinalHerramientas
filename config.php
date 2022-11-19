@@ -4,3 +4,4 @@
     $lista_controladores['registrar'] = 'registroController';
     $lista_controladores['producto'] = 'productoController';
     $lista_controladores['contacto'] = 'contactoController';
+    $lista_controladores['registro'] = 'registroController';
