@@ -12,7 +12,6 @@ include('./view/layouts/header.php');
         <div id="product-content">
             <input class="form-control" type="text" placeholder="Nombre del producto" aria-label="default input example" id="producto" name="producto">
         </div>
-
         <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="tipo" name="tipo">
             <option selected>Tipo de producto</option>
             <option value="Camiseta">Camiseta</option>
@@ -70,6 +69,40 @@ include('./view/layouts/header.php');
     </div>
 
 </div>
+
+<div class="tabla-productos">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Tipo</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Cantidd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($datos = mysqli_fetch_array($resultado)) { // almaceno en un array la consulta y la condiciono en un while para que me muestre la informacion mientras hayan datos en el array
+                    ?>
+
+                        <tr>
+                            <th><?php echo $datos['id'] ?></th>
+                            <th><?php echo $datos['strProducto'] ?></th> <!-- inserto php y le digo a datos que me muestre lo de la colmna correspondiente mostrara datos a medida que vaya leyendo la informacion -->
+                            <th><?php echo $datos['strTipo'] ?></th>
+                            <th><?php echo $datos['strDescripcion'] ?></th>
+                            <th><?php echo $datos['intPrecio'] ?></th>
+                            <th><?php echo $datos['intCantidad'] ?></th>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </div>
 
 
 <?php

@@ -77,4 +77,8 @@ class productoController
             die();
         }
     }
+
+    static function store(){
+        
+    }
 }
