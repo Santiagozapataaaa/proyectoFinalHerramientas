@@ -16,14 +16,6 @@
                         value('{$datos[0]}','{$datos[1]}','{$datos[2]}','{$datos[3]}','{$datos[4]}','{$datos[5]}', '{$datos[6]}')";
                 
                 $insert = $this->conn->prepare($sql);
-                // $insert->bindParam(':tabla', $tabla);
-                // $insert->bindParam(':nombre', $datos[0]);
-                // $insert->bindParam(':apellido', $datos[1]);
-                // $insert->bindParam(':tipoDoc', $datos[2]);
-                // $insert->bindParam(':doc', $datos[3]);
-                // $insert->bindParam(':email', $datos[4]);
-                // $insert->bindParam(':rol', $datos[5]);
-                // $insert->bindParam(':passwd', $datos[6]);
 
                 if ($insert->execute()) {
                     $this->conn->commit();

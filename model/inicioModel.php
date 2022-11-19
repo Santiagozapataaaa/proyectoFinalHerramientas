@@ -1,32 +1,36 @@
 <?php
-    class inicioModelo {
-        private $modelo;
-        private $conn;
+class inicioModelo
+{
+    private $inicioModelo;
+    private $conn;
 
-        public function __construct()
-        {
-            $this->Modelo = array();
-            include './controller/conexionController.php';
-            $this->conn = $db;
-        }
+    public function __construct()
+    {
+        $this->inicioModelo = array();
+        include './controller/conexionController.php';
+        $this->conn = new Conexion();
+    }
 
-        public function mostrar($tabla)
-        {
-            $sql = 'select * from '.$tabla;
-            $consulta = mysqli_prepare($this->conn, $sql);
+    public function mostrar($tabla)
+    {
 
-            mysqli_stmt_execute($consulta);
+        $this->conn->beginTransaction();
+        try {
+            $sql = "SELECT * from " . $tabla . " where 1";
+            $consulta = $this->conn->prepare($sql);
+            $consulta->execute();
+            $this->conn->commit();
 
-            $resultado = mysqli_stmt_bind_result($consulta, $descripcion, $valor, $ruta);
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-            if (mysqli_stmt_fetch($consulta))
-            {
-                $consulta->close();
-                return $resultado;
-            }else{
-                $consulta->close();
+            if (!empty($resultado)) {
                 return $resultado;
             }
+        } catch (PDOException $e) {
+            $this->conn->rollback();
+            echo "No se pudo realizar la consulta" . $e->getMessage();
+            exit();
         }
-
+        exit();
     }
+}

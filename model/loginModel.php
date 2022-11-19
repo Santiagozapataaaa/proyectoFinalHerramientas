@@ -1,6 +1,6 @@
 <?php
     class loginModelo {
-        private $modelo;
+        private $Modelo;
         private $conn;
 
         public function __construct()
@@ -16,7 +16,6 @@
 
             $this->conn -> beginTransaction();
             try{
-                //SELECT count(*) as conteo, tblroles.strNombre_rol, `strPassword` FROM `tblusuarios` INNER JOIN tblroles WHERE numId_Rol = tblroles.id;
                 $sql = "SELECT count(*) as conteo, strPassword, tblroles.strNombre_rol as Rol FROM ".$tabla." INNER JOIN tblroles where numId_Rol = tblroles.id and strCorreo = '".$datos[0]."'";
                 $consulta = $this->conn->prepare($sql);
                 $consulta->execute();
@@ -25,8 +24,8 @@
                 $user = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
                 if($user[0]["conteo"]>0){
-                    //password_verify($clave, $user[0]['strPassword'])
                     if(password_verify($clave, $user[0]['strPassword'])){
+                        session_start();
                         $_SESSION["userRol"] = $user[0]["Rol"];
                         return true;
                     }else{
