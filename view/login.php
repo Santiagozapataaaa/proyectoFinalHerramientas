@@ -17,11 +17,11 @@
                 <input type="text" placeholder="Nombre"  name="nombre"/>
                 <input type="text" placeholder="Apellido" name="apellido"/>
                 <input type="email" placeholder="Email" name="email"/>
-                <select id="format" name="tipoDoc">
+                <select class="formato" id="format" name="tipoDoc">
                     <option selected>Selecione Tipo de Documento</option>
                     <option value="C.C">Cedula Ciudadania</option>
                     <option value="T.I">Tarjeta de Identidad</option>
-                    <option value="C.E">Cedula de Extrangeria</option>
+                    <option value="C.E">Cedula de Extranjeria</option>
                 </select>
                 <input type="number" placeholder="Numero de documento" name="doc"/>
                 <input type="password" placeholder="Password" name="passwd"/>
