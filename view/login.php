@@ -1,7 +1,3 @@
-<?php
-include "./controller/loginController.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,20 +12,20 @@ include "./controller/loginController.php";
     <h2>INICIO DE SESIÓN</h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="../Controller/registroController.php" method="POST">
+            <form action="registrar/registro" method="POST">
                 <h1>Crear cuenta</h1>
-                <input type="text" placeholder="Nombre"  />
-                <input type="text" placeholder="Apellido" />
-                <input type="email" placeholder="Email" />
-                <input type="text" placeholder="Tipo de documento" />
-                <input type="number" placeholder="Numero de documento" />
-                <input type="password" placeholder="Password" />
+                <input type="text" placeholder="Nombre"  name="nombre"/>
+                <input type="text" placeholder="Apellido" name="apellido"/>
+                <input type="email" placeholder="Email" name="email"/>
+                <input type="text" placeholder="Tipo de documento" name="tipoDoc"/>
+                <input type="number" placeholder="Numero de documento" name="doc"/>
+                <input type="password" placeholder="Password" name="passwd"/>
                 <input type="password" placeholder="Password validation" />
-                <button class="buttonIngresar">Registrarme</button>
+                <button class="buttonIngresar" name="registrar">Registrarme</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="<?php loginController::login(); ?>" method="POST">
+            <form action="iniciar_sesion/login" method="POST">
                 <h1>Inicia Sesión</h1>
                 <input type="email" placeholder="Usuario" name="usuario"/>
                 <input type="password" placeholder="Contraseña" name="password"/>
