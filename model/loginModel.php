@@ -7,29 +7,37 @@
         {
             $this->Modelo = array();
             include './controller/conexionController.php';
-            $this->conn = $db;
+            $this->conn = new Conexion();
         }
         
         public function consultar($tabla,$datos)
         {
-            $sql = 'SELECT strpassword, numid_rol FROM '.$tabla. ' where strcorreo= "'.$datos[0].'"';
-            $consulta = mysqli_prepare($this->conn,$sql);
-            mysqli_stmt_execute($consulta);
-            mysqli_stmt_bind_result($consulta,$pass,$rol);
+            $clave = htmlentities($datos[1]);
 
-            if(mysqli_stmt_fetch($consulta)){
-                $consulta->close();
-                if($datos[1]==$pass){
-                    session_start();
-                    $_SESSION["rol"] = $rol;
-                    return true;
-                    
+            $this->conn -> beginTransaction();
+            try{
+                //SELECT count(*) as conteo, tblroles.strNombre_rol, `strPassword` FROM `tblusuarios` INNER JOIN tblroles WHERE numId_Rol = tblroles.id;
+                $sql = "SELECT count(*) as conteo, strPassword, tblroles.strNombre_rol as Rol FROM ".$tabla." INNER JOIN tblroles where numId_Rol = tblroles.id and strCorreo = '".$datos[0]."'";
+                $consulta = $this->conn->prepare($sql);
+                $consulta->execute();
+                $this->conn->commit();
+
+                $user = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+                if($user[0]["conteo"]>0){
+                    //password_verify($clave, $user[0]['strPassword'])
+                    if(password_verify($clave, $user[0]['strPassword'])){
+                        $_SESSION["userRol"] = $user[0]["Rol"];
+                        return true;
+                    }else{
+                        return false;
+                    }
                 }
-                else false;
+            }catch(PDOException $e ){
+                $this->conn -> rollback();
+                echo "No se pudo realizar la consulta".$e->getMessage();
+                exit();
             }
-            else
-            {
-                return false;
-            }
+            exit();
         }
     }

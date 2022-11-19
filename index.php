@@ -17,4 +17,13 @@ if($controlador == ''){
 }
 
 include('./controller/'.$controlador.'.php');
-$controlador::index();
+
+if($url_adicional == '')
+{
+    $controlador::index();
+}
+else
+{
+    $url_adicional = str_replace('/', '', $url_adicional);
+    $controlador::{$url_adicional}();
+}
