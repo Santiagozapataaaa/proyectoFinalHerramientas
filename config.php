@@ -6,3 +6,4 @@
     $lista_controladores['contacto'] = 'contactoController';
     $lista_controladores['registro'] = 'registroController';
     $lista_controladores['uploadfile'] = 'upload-file';
+    $lista_controladores['recuperar'] = 'recuperarController';

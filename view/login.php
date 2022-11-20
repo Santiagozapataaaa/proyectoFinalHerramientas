@@ -34,7 +34,7 @@
                 <h1>Inicia Sesión</h1>
                 <input type="email" placeholder="Usuario" name="usuario"/>
                 <input type="password" placeholder="Contraseña" name="password"/>
-                <a href="#" class="forgot">Olvidaste tu contraseña?</a>
+                <a href="recuperar" class="forgot">Olvidaste tu contraseña?</a>
                 <button class="buttonIngresar" name="enviar">Ingresar</button>
             </form>
         </div>
