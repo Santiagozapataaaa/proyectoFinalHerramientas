@@ -142,6 +142,11 @@ nav a:hover {
     margin-top: 60px !important;
 }
 
+.actualizar>#input-id{
+    width: 30px !important;
+    margin-bottom: 10px !important;
+}
+
 /* -----------Footer----------- */
 .footer {
     background-color: #000;

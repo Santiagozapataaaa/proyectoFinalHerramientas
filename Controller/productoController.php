@@ -17,8 +17,7 @@ class productoController
 
     static function enviar()
     {
-        if(isset($_POST['btn-producto']))
-        {
+        if (isset($_POST['btn-producto'])) {
             $producto = $_POST['producto'];
             $cantidad = $_POST['cantidad'];
             $descripcion = $_POST['descripcion'];
@@ -26,51 +25,11 @@ class productoController
             $tipo = $_POST['tipo'];
 
             $file = $_FILES["file-upload"]["name"];
-            $url = "./view/img/productos"."/".$file;
-
-            $validator = 1; //Variable validadora
-
-            $file_type = strtolower(pathinfo($file, PATHINFO_EXTENSION)); //Extensión de nuestro archivo
-        
-            $url_temp = $_FILES["file-upload"]["tmp_name"]; //Ruta temporal a donde se carga el archivo 
-        
-            //dirname(__FILE__) nos otorga la ruta absoluta hasta el archivo en ejecución
-            $url_insert = dirname('./view/img') . "/productos"; //Carpeta donde subiremos nuestros archivos
-        
-            //Ruta donde se guardara el archivo, usamos str_replace para reemplazar los "\" por "/"
-            $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
-        
-            //Si la carpeta no existe, la creamos
-            if (!file_exists($url_insert)) {
-                mkdir($url_insert, 0777, true);
-            };
-        
-            //Validamos el tamaño del archivo
-            $file_size = $_FILES["file-upload"]["size"];
-            if ($file_size > 2000000) {
-                echo "El archivo es muy pesado";
-                $validator = 0;
-            }
-        
-            //Validamos la extensión del archivo
-            if ($file_type != "jpg" && $file_type != "jpeg" && $file_type != "png") {
-                echo "Solo se permiten imágenes tipo JPG, JPEG, PNG";
-                $validator = 0;
-            }
-        
-            //movemos el archivo de la carpeta temporal a la carpeta objetivo y verificamos si fue exitoso
-            if ($validator == 1) {
-                if (move_uploaded_file($url_temp, $url_target)) {
-                    echo "El archivo " . htmlspecialchars(basename($file)) . " ha sido cargado con éxito.";
-                } else {
-                    echo "Ha habido un error al cargar tu archivo.";
-                }
-            } else {
-                echo "Error: el archivo no se ha cargado";
-            }
         }
 
-        $datos = [$producto, $tipo, $descripcion,$precio ,$cantidad,$url];
+        $url_target = subirArchivo($file);
+
+        $datos = [$producto, $tipo, $descripcion, $precio, $cantidad, $url_target];
         $consulta = new productoModelo();
 
         $result = $consulta->registrar("tblproductos", $datos);
@@ -85,9 +44,90 @@ class productoController
         }
     }
 
-    static function eliminar(){
-        if(isset($_POST['eliminar-producto'])){
-            
+    static function eliminar()
+    {
+        $dato = $_GET['id'];
+        $archivo = $_GET['archivo'];
+
+        $producto = new productoModelo;
+        $borrar = $producto->borrar('tblproductos', $dato);
+
+        if ($borrar) {
+            unlink($archivo);
+            header("location: ../producto");
         }
+    }
+
+    static function actualizar()
+    {
+        if (isset($_POST['actualizar'])) {
+            $id = $_GET['id'];
+            $producto = $_POST['producto'];
+            $tipo = $_POST['tipo'];
+            $descripcion = $_POST['descripcion'];
+            $precio = $_POST['precio'];
+            $cantidad = $_POST['cantidad'];
+
+            $file = $_FILES["file-upload"]["name"];
+            $url = subirArchivo(($file));
+
+            $datos = [$id, $producto, $tipo, $descripcion, $precio, $cantidad, $url];
+
+            $producto = new productoModelo;
+            $actualizar = $producto->actualizar('tblproductos', $datos);
+
+            if ($actualizar) {
+                header('location: ../producto');
+            } else {
+                $msj = 'No se pudo realizar la actualizacion';
+                header('location: ../actualizar');
+            }
+        }
+    }
+}
+
+function subirArchivo($file)
+{
+    $validator = 1; //Variable validadora
+
+    $file_type = strtolower(pathinfo($file, PATHINFO_EXTENSION)); //Extensión de nuestro archivo
+
+    $url_temp = $_FILES["file-upload"]["tmp_name"]; //Ruta temporal a donde se carga el archivo 
+
+    //dirname(__FILE__) nos otorga la ruta absoluta hasta el archivo en ejecución
+    $url_insert = dirname('./view/img/') . "/img/productos"; //Carpeta donde subiremos nuestros archivos
+
+    //Ruta donde se guardara el archivo, usamos str_replace para reemplazar los "\" por "/"
+    $url_target = str_replace('\\', '/', $url_insert) . '/' . $file;
+
+    //Si la carpeta no existe, la creamos
+    if (!file_exists($url_insert)) {
+        mkdir($url_insert, 0777, true);
+    };
+
+    //Validamos el tamaño del archivo
+    $file_size = $_FILES["file-upload"]["size"];
+    if ($file_size > 5000000) {
+        $msj = "El Archivo excede el tamaño permitido";
+        $validator = 0;
+    }
+
+    //Validamos la extensión del archivo
+    if ($file_type != "jpg" && $file_type != "jpeg" && $file_type != "png") {
+        $msj = "Solo se permiten imágenes tipo JPG, JPEG, PNG";
+        $validator = 0;
+    }
+
+    move_uploaded_file($url_temp, $url_target);
+
+    //movemos el archivo de la carpeta temporal a la carpeta objetivo y verificamos si fue exitoso
+    if ($validator == 1) {
+        // if (move_uploaded_file($url_temp, $url_target)) {
+            return $url_target;
+        // } else {
+        //     return "El archivo no se pudo guardar";
+        // }
+    } else {
+        return $msj;
     }
 }

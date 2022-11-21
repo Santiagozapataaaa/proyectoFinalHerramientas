@@ -1,81 +1,50 @@
-#form_producto{
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    max-width: 1240px;
+#title-container {
     text-align: center;
-    flex-wrap: wrap;
-    padding: 40px;
+    margin: 20px 0px;
 }
-#product-content{
-    width: 35%;
-    margin: 20px 0 0 30px;
+
+.formulario {
+    display: flex;
+    justify-content: center;
 }
-#tipo{
-    width: 35%;
-    margin: 20px 20px 0 20px;
-    height: 40px;
-}
-#cantidad-content{
-    width: 20%;
-    margin-top: 20px;
-}
-#decripcion-container{
-    margin:20px 20px 0 30px;
-    width: 35%;
-    height: 100%;
-}
-#precio-content{
-    margin:20px 10px 0 0;
-    width: 25%;
-}
-#divInputLoad{
-    margin-top: 20px;
-    width: 31%;
-}
-#btn-content{
-    width: 30%;
-    float: right;
-    margin-left: 850px;
-    margin-top: -30px;
-}
-#maxi-container{
-    margin: auto;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1240px 300px;
-    max-width: 1600px;
-    padding:20px ;
-    -webkit-box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 33px -11px rgba(0,0,0,0.75);
+
+.maxi-container {
+    width: 90%;
+    padding: 20px;
+    box-shadow: 0px 0px 33px -11px rgba(0, 0, 0, 0.75);
     border-radius: 8px;
+    margin-bottom: 40px;
 }
-#file-preview-zone{
-    display: inline-block;
-    width: 220px;
-    height: 300px;
+
+#file-preview-zone {
+    width: 300px;
+    height: 240px;
     outline: 3px solid rgb(174, 174, 174);
-    border-radius: 5%;
+    border-radius: 20px;
+    padding: 0px;
+    margin-left: 50px;
 }
-#file-preview-zone img{
+
+#file-preview-zone img {
     height: 100%;
     width: 100%;
-    border-radius: 5%;
+    border-radius: 20px;
+    padding: 0px;
+    margin: 0px;
 }
-#loguito{
-    width: 70px;
-    display: absolute;
-}
-#title-container{
-    width: 100vw;
-    text-align: center;
-}
-#titulo-p{
-    display: inline-block;
-}
-#tabla-productos{
-    max-width: 1200px;
+
+.tabla-productos {
+    width: 90%;
     margin: auto;
-    margin-top: 50px
+    margin-top: 10px;
+    text-align: center
+}
+
+.tabla-productos th {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tabla-productos img {
+    width: 100px;
 }
