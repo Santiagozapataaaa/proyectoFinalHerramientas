@@ -6,7 +6,7 @@ include('./view/layouts/header.php');
 <div class="container content-actualizar">
     <div class="row justify-content-center">
         <div class="col-lg-6 actualizar">
-            <form action="producto/actualizar?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data" id="form_producto">
+            <form action="producto/actualizar?id=<?php echo $_GET['id'] ?>&ruta=<?php echo $_GET['ruta']?>" method="post" enctype="multipart/form-data" id="form_producto">
                 <input type="text" class="form-control" name="id" value="<?php echo $_GET['id'] ?>" disabled>
                 <div class="row">
                     <div id="" class="col-lg-6 mb-3">

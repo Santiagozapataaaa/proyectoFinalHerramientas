@@ -69,7 +69,15 @@ class productoController
             $cantidad = $_POST['cantidad'];
 
             $file = $_FILES["file-upload"]["name"];
-            $url = subirArchivo(($file));
+            
+            if(empty($file))
+            {
+                $url = $_GET['ruta'];
+            }
+            else
+            {
+                $url = subirArchivo(($file));
+            }
 
             $datos = [$id, $producto, $tipo, $descripcion, $precio, $cantidad, $url];
 
@@ -114,7 +122,7 @@ function subirArchivo($file)
 
     //Validamos la extensión del archivo
     if ($file_type != "jpg" && $file_type != "jpeg" && $file_type != "png") {
-        $msj = "Solo se permiten imágenes tipo JPG, JPEG, PNG";
+        $msj = "";
         $validator = 0;
     }
 

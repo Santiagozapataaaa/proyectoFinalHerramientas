@@ -40,3 +40,5 @@ var fileUpload = document.getElementById('file-upload');
 fileUpload.onchange = function(e) {
     readFile(e.srcElement);
 }
+
+//-------------------------------------------------

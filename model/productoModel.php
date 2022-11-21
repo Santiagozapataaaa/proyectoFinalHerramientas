@@ -81,9 +81,10 @@ class productoModelo
     public function actualizar($tabla, $datos)
     {
 
+        $fecha = date('Y-m-d');
         $this->conn->beginTransaction();
         try {
-            $sql = "UPDATE {$tabla} SET strProducto='{$datos[1]}', strTipo='{$datos[2]}', strDescripcion = '{$datos[3]}', intPrecio={$datos[4]}, intCantidad={$datos[5]}, strRuta = '{$datos[6]}' where {$tabla}.id = {$datos[0]}";
+            $sql = "UPDATE {$tabla} SET strProducto='{$datos[1]}', strTipo='{$datos[2]}', strDescripcion = '{$datos[3]}', intPrecio={$datos[4]}, intCantidad={$datos[5]}, strRuta = '{$datos[6]}', datFecha_actualizacion = '{$fecha}' where {$tabla}.id = {$datos[0]}";
             $consulta = $this->conn->prepare($sql);
 
             if ($consulta->execute()) {

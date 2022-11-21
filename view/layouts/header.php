@@ -68,15 +68,15 @@
                             <li class="nav-item menu-usuario">
                                 <a class="nav-link dropdown-toogle" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li class="product">
-                                        <a href="nav-link">Perfil</a>
+                                    <li class="opcion">
+                                        <a href="" class="nav-link">Perfil</a>
                                     </li>
-                                    <li class="product">
-                                        <a href="nav-link">opciones</a>
+                                    <li class="opcion">
+                                        <a href="" class="nav-link">Opciones</a>
                                     </li>
                                     <li class="separador"></li>
                                     <li class="nav-item botones">
-                                        <button class="btn btn-outline-success"><a href="inicio/salir">Cerrar Sesion</a></button>
+                                        <a href="inicio/salir"><button class="btn btn-outline-danger" id="logout">Cerrar Sesion</button></a>
                                     </li>
                                 </ul>
                             </li>
