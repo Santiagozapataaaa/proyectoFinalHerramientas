@@ -11,22 +11,22 @@
     <title>Recuperar Contraseña</title>
 </head>
 <body>
-<form action="" method="POST" id="contenedor">
+<form action="recuperar/recuperacion" method="POST" id="contenedor">
     <div class="contenido">
         <div class="mb-3">
             <h2>Cambiar contraseña</h2>
-            <input type="email" class="form-control" placeholder="Correo con el cual se registro" name="mail">
+            <input type="email" class="form-control" placeholder="Correo con el cual se registro" name="correo">
         </div>
         <div class="mb-3">
             <input type="number" class="form-control" placeholder="Cedula con la cual se registro" name="doc">
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" placeholder="Contraseña nueva" name="rvalidation_pass">
+            <input type="password" class="form-control" placeholder="Contraseña nueva" name="passwd">
         </div>
         <div class="mb-3">
             <input type="password" class="form-control" placeholder="Confirme la nueva contraseña" name="rvalidation_pass">
         </div>
-        <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
+            <button type="submit" class="btn btn-primary" name="recuperar">Cambiar contraseña</button>
         </form>
     </div>
 
